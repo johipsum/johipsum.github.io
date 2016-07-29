@@ -46,7 +46,7 @@ gulp.task('copyCNAME', () => {
 })
 
 
-gulp.task('pushToGithub', ['buildJS', 'minifyHMTL', 'minifyCSS', 'copyCNAME'], () => {
+gulp.task('pushToGithub', ['buildJS', 'buildViews', 'minifyCSS', 'copyCNAME'], () => {
   const date = new Date();
 
   return gulp.src('./dist/**/*')
