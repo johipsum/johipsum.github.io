@@ -34,4 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(() => colorizer.setBackgroundColor(), 1000)
   setInterval(() => colorizer.setChildrenColor(), 1200)
-});
+})

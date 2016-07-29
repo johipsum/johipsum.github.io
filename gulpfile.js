@@ -6,7 +6,7 @@ const uglify = require('gulp-uglify')
 const htmlmin = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
 const handlebars = require('gulp-handlebars-extended')
-const metaJSON = require('./meta.json');
+const metaJSON = require('./meta.json')
 
 
 gulp.task('default', ['buildJS', 'buildViews', 'minifyCSS'])
@@ -17,7 +17,7 @@ gulp.task('buildJS', () => {
   return gulp.src('./app/*.js')
   .pipe(babel())
   .pipe(uglify())
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist'))
 })
 
 
@@ -29,14 +29,14 @@ gulp.task('buildViews', function(){
   return gulp.src('app/*.hbs')
     .pipe(handlebars({ meta: metaJSON }, { layouts: layouts }))
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
 })
 
 
 gulp.task('minifyCSS', () => {
   return gulp.src('app/*.css')
     .pipe(cleanCSS({ compatibility: 'ie7' }))
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist'))
 })
 
 
@@ -55,11 +55,11 @@ gulp.task('copyREADME', () => {
 gulp.task('pushToGithub', [
   'buildJS', 'buildViews', 'minifyCSS', 'copyCNAME', 'copyREADME'
 ], () => {
-  const date = new Date();
+  const date = new Date()
 
   return gulp.src('./dist/**/*')
     .pipe(ghPages({
       branch: 'master',
       message: `automatically generated - ${date.toUTCString()}`
-    }));
+    }))
 })
