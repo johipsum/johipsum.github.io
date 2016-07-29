@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>{{meta.title}}</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="{{meta.description}}" />
+
+    <meta name="twitter:card" value="summary">
+    <meta name="twitter:title" content="{{meta.title}}">
+    <meta name="twitter:description" content="{{meta.description}}">
+    <meta name="twitter:creator" content="@johdirr">
+
+    <meta property="og:title" content="{{meta.title}}" />
+    <meta property="og:site_name" content="{{meta.url}}" />
+    <meta property="og:url" content="{{meta.url}}" />
+    <meta property="og:description" content="{{meta.description}}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    {{{content}}}
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -30,7 +30,7 @@ class Colorizer {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const colorizer = new Colorizer('body');
+  const colorizer = new Colorizer('body')
 
   setInterval(() => colorizer.setBackgroundColor(), 1000)
   setInterval(() => colorizer.setChildrenColor(), 1200)

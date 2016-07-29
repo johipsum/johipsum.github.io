@@ -1,12 +1,15 @@
 const gulp = require('gulp')
 const ghPages = require('gulp-gh-pages')
 const babel = require('gulp-babel')
+const fs = require('fs')
 const uglify = require('gulp-uglify')
 const htmlmin = require('gulp-htmlmin')
 const cleanCSS = require('gulp-clean-css')
+const handlebars = require('gulp-handlebars-extended')
+const metaJSON = require('./meta.json');
 
 
-gulp.task('default', ['buildJS', 'minifyHMTL', 'minifyCSS'])
+gulp.task('default', ['buildJS', 'buildViews', 'minifyCSS'])
 gulp.task('deploy', ['pushToGithub'])
 
 
@@ -15,22 +18,26 @@ gulp.task('buildJS', () => {
   .pipe(babel())
   .pipe(uglify())
   .pipe(gulp.dest('dist'));
-});
+})
 
 
+gulp.task('buildViews', function(){
+  const layouts = {
+    main: fs.readFileSync('./app/layouts/main.hbs').toString()
+  }
 
-gulp.task('minifyHMTL', () => {
-  return gulp.src('app/*.html')
+  return gulp.src('app/*.hbs')
+    .pipe(handlebars({ meta: metaJSON }, { layouts: layouts }))
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('dist'))
-});
+    .pipe(gulp.dest('dist'));
+})
 
 
 gulp.task('minifyCSS', () => {
   return gulp.src('app/*.css')
     .pipe(cleanCSS({ compatibility: 'ie7' }))
     .pipe(gulp.dest('dist'));
-});
+})
 
 
 gulp.task('copyCNAME', () => {
@@ -47,4 +54,4 @@ gulp.task('pushToGithub', ['buildJS', 'minifyHMTL', 'minifyCSS', 'copyCNAME'], (
       branch: 'master',
       message: `automatically generated - ${date.toUTCString()}`
     }));
-});
+})
