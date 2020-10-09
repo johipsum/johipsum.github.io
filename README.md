@@ -1,3 +1,3 @@
-# johannes.hauptsache-serioes.de 
+# johipsum.github.io
 
-Source => [`dev`](https://github.com/johdirr/johdirr.github.io/tree/dev) branch.
+Source => [`dev`](https://github.com/johipsum/johipsum.github.io/tree/dev) branch.
