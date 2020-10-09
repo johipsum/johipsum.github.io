@@ -40,12 +40,6 @@ gulp.task('minifyCSS', () => {
 })
 
 
-gulp.task('copyCNAME', () => {
-  return gulp.src('CNAME')
-    .pipe(gulp.dest('dist'))
-})
-
-
 gulp.task('copyREADME', () => {
   return gulp.src('README.md')
     .pipe(gulp.dest('dist'))
@@ -53,7 +47,7 @@ gulp.task('copyREADME', () => {
 
 
 gulp.task('pushToGithub', [
-  'buildJS', 'buildViews', 'minifyCSS', 'copyCNAME', 'copyREADME'
+  'buildJS', 'buildViews', 'minifyCSS', 'copyREADME'
 ], () => {
   const date = new Date()
 
