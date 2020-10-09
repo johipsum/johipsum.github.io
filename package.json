@@ -1,5 +1,5 @@
 {
-  "name": "johdirr.github.io",
+  "name": "johipsum.github.io",
   "version": "1.0.0",
   "description": "homepage",
   "main": "app/main.js",
@@ -9,19 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/johdirr/johdirr.github.io.git"
+    "url": "https://github.com/johipsum/johipsum.github.io.git"
   },
   "keywords": [
     "homepage",
-    "johannes",
-    "hauptsache",
-    "serioes"
+    "johipsum",
   ],
-  "author": "Johannes Dirr <johannes@hauptsache-serioes.de>",
+  "author": "Joh Ipsum <joh.ipsum@icloud.com>",
   "bugs": {
-    "url": "https://github.com/johdirr/johdirr.github.io/issues"
+    "url": "https://github.com/johipsum/johipsum.github.io/issues"
   },
-  "homepage": "https://github.com/johdirr/johdirr.github.io#readme",
+  "homepage": "https://github.com/johipsum/johipsum.github.io#readme",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-plugin-transform-class-properties": "^6.11.5",
