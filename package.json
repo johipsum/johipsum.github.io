@@ -4,7 +4,8 @@
   "description": "homepage",
   "main": "app/main.js",
   "scripts": {
-    "start": "echo 'there is nothing to start'"
+    "start": "echo 'there is nothing to start'",
+    "release": "gulp && gulp deploy"
   },
   "repository": {
     "type": "git",
